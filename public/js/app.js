@@ -12,8 +12,8 @@ $(function(){
   $customShortId = $('#customShortid');
   $shortId = $('#shortid');
   $customTheme = 'check';
-  $placeholder_old = '请等待分配临时邮箱';
-  $placeholder_new = '请输入不带后缀邮箱账号';
+  $placeholder_old = 'Please wait for a temporary mailbox to be allocated';
+  $placeholder_new = 'Please enter the email account without suffix';
   $customShortId.on('click',function() {
     var self = $(this);
     var editEnable = true;
@@ -41,7 +41,7 @@ $(function(){
 
   $maillist.on('click', 'tr', function() {
     var mail = $(this).data('mail');
-    $('#mailcard .header').text(mail.headers.subject || '无主题');
+    $('#mailcard .header').text(mail.headers.subject || 'no subject');
     $('#mailcard .content:last').html(mail.html);
     $('#mailcard i').click(function() {
       $('#raw').modal('show');
@@ -95,7 +95,7 @@ $(function(){
     $tr = $('<tr>').data('mail', mail);
     $tr
       .append($('<td>').text(mail.headers.from))
-      .append($('<td>').text(mail.headers.subject || '无主题'))
+      .append($('<td>').text(mail.headers.subject || 'no subject'))
       .append($('<td>').text((new Date(mail.headers.date)).toLocaleTimeString()));
     $maillist.prepend($tr);
   });
